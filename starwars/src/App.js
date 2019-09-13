@@ -44,7 +44,7 @@ const App = () => {
     <div className="App">
       <h1 className="Header">React Wars</h1>
       <div>
-      <h2>The Rebels</h2>
+      <h2>Personal bio page</h2>
         {data.map((rebels, index) => {
           return <Actors name={rebels.name} key={index} height={rebels.height} birthday={rebels.birth_year} eye={rebels.eye_color}/>
         })}

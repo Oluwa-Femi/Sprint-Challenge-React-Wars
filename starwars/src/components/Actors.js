@@ -10,7 +10,7 @@ const Actors = (props) => {
             <Container >
                 <StyledH2>{props.name}</StyledH2>
                 <div>
-                    <StyledH3>About Me</StyledH3>
+                    <StyledH3>Profile</StyledH3>
                         <StyleP>Gender: {props.gender}</StyleP>
                         <StyleP>Birth Year: {props.birthday}</StyleP>
                         <StyleP>Height: {props.height}</StyleP>
