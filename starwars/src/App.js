@@ -4,14 +4,9 @@ import axios from 'axios'
 
 import './App.css';
 
-import styled from "styled-components"
 
-const AppContainer = styled.div `
-  display: flex;
-  flex-wrap: wrap;
-  justify-content:space-evenly;
-  width: 100%;
-`;
+
+
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -46,7 +41,7 @@ const App = () => {
       <div>
       <h2>Personal bio page</h2>
         {data.map((rebels, index) => {
-          return <Actors name={rebels.name} key={index} height={rebels.height} birthday={rebels.birth_year} eye={rebels.eye_color}/>
+          return <Actors name={rebels.name} key={index} height={rebels.height} birthday={rebels.birth_year} gender={rebels.gender}/>
         })}
       </div>
     </div>
