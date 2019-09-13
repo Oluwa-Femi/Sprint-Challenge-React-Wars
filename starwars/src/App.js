@@ -4,6 +4,14 @@ import axios from 'axios'
 
 import './App.css';
 
+import styled from "styled-components"
+
+const AppContainer = styled.div `
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  width: 100%;
+`;
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -14,7 +22,7 @@ const App = () => {
   const [data, setData] = useState([])
 
   const fetchData = () => {
-    axios.get('https://swapi.co/api/people/?format=json')
+    axios.get('https://swapi.co/api/people/')
     .then(response => {
       setData(response.data.results)
     })
