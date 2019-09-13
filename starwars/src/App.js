@@ -13,14 +13,16 @@ const App = () => {
   const [data, setData] = useState([])
 
   const fetchData = () => {
-    axios.get('https://swapi.co/api/people/?format=api')
+    axios.get('https://swapi.co/api/people/?format=json')
     .then(response => {
-      setData(response.data.data)
+      setData(response.data.results)
     })
     .catch(error =>{console.log('error in api request :(')})
   }
 
   useEffect(fetchData, [])
+
+    console.log(data);
 
   return (
     <div className="App">
