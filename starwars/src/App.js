@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Actors from './components/Actors'
 import axios from 'axios'
 
 import './App.css';
@@ -17,16 +18,29 @@ const App = () => {
     .then(response => {
       setData(response.data.results)
     })
-    .catch(error =>{console.log('error in api request :(')})
+    .catch(error =>{console.log('Bleh!! Error :(')})
   }
 
   useEffect(fetchData, [])
 
-    console.log(data);
+  console.log(data);
+
+// iterating through data variable
+  // data.map(rebelname => {
+  //   setData(rebelname.name)
+  // })
+
+  //   console.log(data);
 
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <div>
+      <h2>The Rebels</h2>
+        {data.map((rebels, index) => {
+          return <Actors name={rebels.name} key={index} height={rebels.height} birthday={rebels.birth_year} eye={rebels.eye_color}/>
+        })}
+      </div>
     </div>
   );
 }
